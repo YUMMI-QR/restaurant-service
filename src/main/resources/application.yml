@@ -1,0 +1,20 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: restaurant-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/yummi_qr?useSSL=false&serverTimezone=UTC
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update   # create, create-drop, update, validate (elige seg�n tu caso)
+    show-sql: true       # Para ver las queries en consola
+    properties:
+      hibernate:
+        format_sql: true # Queries mas legibles
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
