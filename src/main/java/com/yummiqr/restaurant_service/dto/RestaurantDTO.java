@@ -13,24 +13,24 @@ public class RestaurantDTO {
 
     private Long id; // opcional en POST, obligatorio en PUT
 
-    @NotBlank(message = "El nombre del restaurante es obligatorio")
-    @Size(max = 40, message = "El nombre no puede superar 40 caracteres")
+    @NotBlank(message = "{restaurant.name.notblank}")
+    @Size(max = 40, message = "{restaurant.name.size}")
     private String name;
 
-    @NotBlank(message = "El NIF es obligatorio")
-    @Size(max = 9, message = "El NIF no puede superar los 9 caracteres")
+    @NotBlank(message = "{restaurant.nif.notblank}")
+    @Size(max = 9, message = "{restaurant.nif.size}")
     private String nif;
 
-    @NotBlank(message = "El email es obligatorio")
-    @Email(message = "El email no tiene un formato válido")
+    @NotBlank(message = "{restaurant.email.notblank}")
+    @Email(message = "{restaurant.email.email}")
     private String email;
 
-    @DecimalMin(value = "0.0", inclusive = false, message = "El impuesto debe ser mayor que 0")
-    @DecimalMax(value = "100.0", message = "El impuesto no puede superar el 100%")
+    @DecimalMin(value = "0.0", inclusive = false, message = "{restaurant.taxpercent.decimalmin}")
+    @DecimalMax(value = "100.0", message = "{restaurant.taxpercent.decimalmax}")
     private Double taxPercent;
 
-    @DecimalMin(value = "0.0", message = "La comisión no puede ser negativa")
-    @DecimalMax(value = "100.0", message = "La comisión no puede superar el 100%")
+    @DecimalMin(value = "0.0", message = "{restaurant.feepercent.decimalmin}")
+    @DecimalMax(value = "100.0", message = "{restaurant.feepercent.decimal.max}")
     private Double feePercent;
 
     @Valid

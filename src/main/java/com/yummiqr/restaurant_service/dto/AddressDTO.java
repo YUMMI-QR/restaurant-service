@@ -16,23 +16,23 @@ public class AddressDTO {
 
     private Long id;
 
-    @NotBlank(message = "El tipo de calle es obligatorio")
+    @NotBlank(message = "{address.streettype.notblank}")
     private String streetType;
 
-    @NotBlank(message = "El nombre de la calle es obligatorio")
-    @Size(max = 40, message = "El nombre de la calle no puede superar 40 caracteres")
+    @NotBlank(message = "{address.streetname.notblank}")
+    @Size(max = 40, message = "{address.streetname.size}")
     private String streetName;
 
-    @NotNull(message = "El número de la calle es obligatorio")
+    @NotNull(message = "{address.streetnumber.notnull}")
     private Integer streetNumber;
 
-    @NotBlank(message = "El código postal es obligatorio")
-    @Pattern(regexp = "\\d{5}", message = "El código postal debe tener 5 dígitos")
+    @NotBlank(message = "{address.zipcode.notblank}")
+    @Pattern(regexp = "\\d{5}", message = "{address.zipcode.pattern}")
     private String zipCode;
 
-    @NotBlank(message = "La ciudad es obligatoria")
+    @NotBlank(message = "{address.city.notblank}")
     private String city;
 
-    @NotBlank(message = "El país es obligatorio")
+    @NotBlank(message = "{address.country.notblank}")
     private String country;
 }

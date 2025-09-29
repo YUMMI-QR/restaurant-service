@@ -17,15 +17,15 @@ public class ProductDTO {
 
     private Long id;
 
-    @NotBlank(message = "El nombre del producto es obligatorio")
-    @Size(max = 40, message = "El nombre del producto no puede superar 40 caracteres")
+    @NotBlank(message = "{product.name.notblank}")
+    @Size(max = 40, message = "{product.name.size}")
     private String name;
 
-    @NotNull(message = "El precio es obligatorio")
-    @DecimalMin(value = "0.01", message = "El precio debe ser mayor que 0")
+    @NotNull(message = "{product.price.notnull}")
+    @DecimalMin(value = "0.01", message = "{product.price.decimalmin}")
     private Double price;
 
-    @Size(max = 255, message = "La descripción no puede superar 255 caracteres")
+    @Size(max = 255, message = "{product.description.size}")
     private String description;
 
     @Valid
