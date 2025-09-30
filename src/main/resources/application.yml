@@ -14,7 +14,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update   # create, create-drop, update, validate (elige seg�n tu caso)
+      ddl-auto: validate   # create, create-drop, update, validate (elige seg�n tu caso)
     show-sql: true       # Para ver las queries en consola
     properties:
       hibernate:

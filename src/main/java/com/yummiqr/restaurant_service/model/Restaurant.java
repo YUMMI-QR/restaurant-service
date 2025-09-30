@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -32,10 +33,10 @@ public class Restaurant {
     private String email;
 
     @Column(name = "TAX_PERCENT", precision = 5, scale = 2)
-    private Double taxPercent;
+    private BigDecimal taxPercent;
 
     @Column(name = "FEE_PERCENT", precision = 5, scale = 2)
-    private Double feePercent;
+    private BigDecimal feePercent;
 
     @Column(name = "CREATION_DATE", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime creationDate;

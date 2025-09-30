@@ -8,6 +8,7 @@ import java.util.Optional;
 public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
 
     Optional<Restaurant> findByEmail(String email);
+    Optional<Restaurant> findByNif(String nif);
     boolean existsByNif(String nif);
 
 }

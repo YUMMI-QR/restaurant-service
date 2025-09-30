@@ -1,8 +1,10 @@
-package com.yummiqr.restaurant_service.dto;
+package com.yummiqr.restaurant_service.dto.request;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import lombok.*;
+
+import java.math.BigDecimal;
 
 @Getter
 @Setter
@@ -27,11 +29,11 @@ public class RestaurantDTO {
 
     @DecimalMin(value = "0.0", inclusive = false, message = "{restaurant.taxpercent.decimalmin}")
     @DecimalMax(value = "100.0", message = "{restaurant.taxpercent.decimalmax}")
-    private Double taxPercent;
+    private BigDecimal taxPercent;
 
     @DecimalMin(value = "0.0", message = "{restaurant.feepercent.decimalmin}")
     @DecimalMax(value = "100.0", message = "{restaurant.feepercent.decimal.max}")
-    private Double feePercent;
+    private BigDecimal feePercent;
 
     @Valid
     private AddressDTO address; // composición

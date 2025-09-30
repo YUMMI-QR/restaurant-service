@@ -1,4 +1,4 @@
-package com.yummiqr.restaurant_service.dto;
+package com.yummiqr.restaurant_service.dto.request;
 
 
 import jakarta.validation.constraints.NotBlank;

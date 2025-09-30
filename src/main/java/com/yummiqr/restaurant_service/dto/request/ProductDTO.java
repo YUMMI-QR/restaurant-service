@@ -1,4 +1,4 @@
-package com.yummiqr.restaurant_service.dto;
+package com.yummiqr.restaurant_service.dto.request;
 
 import com.yummiqr.restaurant_service.model.Category;
 import jakarta.validation.Valid;
@@ -7,6 +7,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
+
+import java.math.BigDecimal;
 
 @Getter
 @Setter
@@ -23,7 +25,7 @@ public class ProductDTO {
 
     @NotNull(message = "{product.price.notnull}")
     @DecimalMin(value = "0.01", message = "{product.price.decimalmin}")
-    private Double price;
+    private BigDecimal price;
 
     @Size(max = 255, message = "{product.description.size}")
     private String description;
