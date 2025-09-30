@@ -5,7 +5,7 @@ spring:
     basename: messages
     encoding: UTF-8
   application:
-    name: restaurant-service
+    name: RESTAURANT-SERVICE
   datasource:
     url: jdbc:mysql://localhost:3306/yummi_qr?useSSL=false&serverTimezone=UTC
     username: root

@@ -11,6 +11,12 @@ import java.util.stream.Collectors;
 @Component
 public class RestaurantMapper {
 
+    private final AddressMapper addressMapper;
+
+    public RestaurantMapper(AddressMapper addressMapper) {
+        this.addressMapper = addressMapper;
+    }
+
     public Restaurant toEntity(RestaurantDTO dto){
         if(dto == null){
             return null;
@@ -21,6 +27,7 @@ public class RestaurantMapper {
                 .email(dto.getEmail())
                 .taxPercent(dto.getTaxPercent())
                 .feePercent(dto.getFeePercent())
+                .address(addressMapper.toEntity(dto.getAddress()))
                 .build();
 
     }
@@ -29,12 +36,14 @@ public class RestaurantMapper {
             return null;
         }
         return RestaurantResponseDTO.builder()
+                .id(restaurant.getId())
                 .name(restaurant.getName())
                 .nif(restaurant.getNif())
                 .email(restaurant.getEmail())
                 .taxPercent(restaurant.getTaxPercent())
                 .feePercent(restaurant.getFeePercent())
                 .creationDate(restaurant.getCreationDate())
+                .address(addressMapper.toResponseDTO(restaurant.getAddress()))
                 .build();
 
     }

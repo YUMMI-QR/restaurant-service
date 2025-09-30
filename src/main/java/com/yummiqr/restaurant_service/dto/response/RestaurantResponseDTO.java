@@ -20,5 +20,5 @@ public class RestaurantResponseDTO {
     private BigDecimal taxPercent;
     private BigDecimal feePercent;
     private LocalDateTime creationDate;
-    private AddressDTO address; // composición
+    private AddressResponseDTO address; // composición
 }
