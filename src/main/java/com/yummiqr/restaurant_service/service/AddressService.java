@@ -33,8 +33,20 @@ public class AddressService {
     }
 
     public AddressResponseDTO create(AddressDTO addressDTO){
-            Address saved = repository.save(mapper.toEntity(addressDTO));
-            return mapper.toResponseDTO(saved);
+        Address addressDB = repository.findByStreetTypeAndStreetNameAndStreetNumberAndZipCodeAndCityAndCountry(
+                addressDTO.getStreetType(),
+                addressDTO.getStreetName(),
+                addressDTO.getStreetNumber(),
+                addressDTO.getZipCode(),
+                addressDTO.getCity(),
+                addressDTO.getCountry()
+        ).orElse(null);
+
+        return addressDB == null ? mapper.toResponseDTO(repository.save(mapper.toEntity(addressDTO)))
+                : mapper.toResponseDTO(addressDB);
+
+
     }
+
 
 }

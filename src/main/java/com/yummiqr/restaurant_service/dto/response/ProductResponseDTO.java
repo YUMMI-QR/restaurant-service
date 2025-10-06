@@ -15,5 +15,5 @@ public class ProductResponseDTO {
     private String name;
     private BigDecimal price;
     private String description;
-    private Category category; // referencia en lugar de objeto completo
+    private CategoryResponseDTO category; // referencia en lugar de objeto completo
 }

@@ -9,4 +9,7 @@ import java.util.List;
 public interface CategoryRepository extends JpaRepository<Category, Long> {
 
     List<Category> findByRestaurantId(Long restaurantId);
+    boolean existsByRestaurantIdAndName(Long restaurantId, String name);
+
+
 }

@@ -38,6 +38,19 @@ public class AddressMapper {
                 .build();
 
     }
+    public Address toEntity(AddressResponseDTO dto){
+        if (dto==null){
+            return null;
+        }
+        return Address.builder()
+                .streetType(dto.getStreetType())
+                .streetName(dto.getStreetName())
+                .streetNumber(dto.getStreetNumber())
+                .zipCode(dto.getZipCode())
+                .city(dto.getCity())
+                .country(dto.getCountry())
+                .build();
+    }
     public List<AddressResponseDTO> toResponseDTOList(List<Address> addressList){
         if(addressList == null){
             return Collections.emptyList();

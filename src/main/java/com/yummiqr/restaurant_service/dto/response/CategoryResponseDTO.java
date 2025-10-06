@@ -12,5 +12,5 @@ public class CategoryResponseDTO {
 
     private Long id;
     private String name;
-    private RestaurantDTO restaurantDTO; // referencia al restaurante
+    private RestaurantResponseDTO restaurantResponseDTO; // referencia al restaurante
 }

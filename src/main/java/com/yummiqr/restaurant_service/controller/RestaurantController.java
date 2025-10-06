@@ -37,19 +37,19 @@ public class RestaurantController {
 //        return ResponseEntity.ok(restaurantService.getRestaurantById(id));
 //    }
 //
-//    // Obtener restaurante por NIF
-//    @GetMapping("/nif/{nif}")
-//    public ResponseEntity<RestaurantResponseDTO> getRestaurantByNif(@PathVariable String nif) {
-//        return ResponseEntity.ok(restaurantService.getRestaurantByNif(nif));
-//    }
+    // Obtener restaurante por NIF
+    @GetMapping("/nif/{nif}")
+    public ResponseEntity<RestaurantResponseDTO> getRestaurantByNif(@PathVariable String nif) {
+        return ResponseEntity.ok(restaurantService.retrieveRestaurant(nif));
+    }
 //
-//    // Actualizar restaurante
-//    @PutMapping("/{id}")
-//    public ResponseEntity<RestaurantResponseDTO> updateRestaurant(
-//            @PathVariable Long id,
-//            @Valid @RequestBody RestaurantDTO restaurantDTO) {
-//        return ResponseEntity.ok(restaurantService.updateRestaurant(id, restaurantDTO));
-//    }
+    // Actualizar restaurante
+    @PutMapping("/nif/{nif}")
+    public ResponseEntity<RestaurantResponseDTO> updateRestaurant(
+            @PathVariable String nif,
+            @Valid @RequestBody RestaurantDTO restaurantDTO) {
+        return ResponseEntity.ok(restaurantService.update(nif, restaurantDTO));
+    }
 //
 //    // Eliminar restaurante
 //    @DeleteMapping("/{id}")
