@@ -29,7 +29,12 @@ public class CategoryController {
         return ResponseEntity.ok(categoryService.retrieveCategory(id));
     }
 
-    @PostMapping("/{restaurantId}")
+    @GetMapping("/restaurant/{restaurantId}")
+    public ResponseEntity<List<CategoryResponseDTO>> findByRestaurant(@PathVariable Long restaurantId){
+        return ResponseEntity.ok(categoryService.findCategoriesByRestaurant(restaurantId));
+    }
+
+    @PostMapping("/restaurant/{restaurantId}")
     public ResponseEntity<CategoryResponseDTO> createCategory(@Valid @RequestBody CategoryDTO categoryDTO, @PathVariable Long restaurantId){
         CategoryResponseDTO created = categoryService.create(restaurantId, categoryDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(created);

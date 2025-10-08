@@ -1,4 +1,4 @@
 package com.yummiqr.restaurant_service.controller;
 
-public class AddressController {
+public class AddressController{
 }

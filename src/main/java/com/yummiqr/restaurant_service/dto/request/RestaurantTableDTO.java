@@ -17,7 +17,7 @@ public class RestaurantTableDTO {
     private Long id;
 
     @NotBlank(message = "{table.qr.notblank}")
-    @Size(max = 40, message = "{table.qr.size}")
+    @Size(max = 50, message = "{table.qr.size}")
     private String qrCode;
 
     @NotNull(message = "{table.number.notnull}")

@@ -13,5 +13,5 @@ public class RestaurantTableResponseDTO {
     private Long id;
     private String qrCode;
     private Integer number;
-    private RestaurantDTO restaurantDTO; // referencia al restaurante
+    private RestaurantResponseDTO restaurant; // referencia al restaurante
 }

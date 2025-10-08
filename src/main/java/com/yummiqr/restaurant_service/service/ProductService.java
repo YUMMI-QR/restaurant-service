@@ -54,5 +54,16 @@ public class ProductService {
         return mapper.toResponseDTO(product);
     }
 
+    public ProductResponseDTO update(Long productId, ProductDTO productDTO){
+        Product product = productRepository.findById(productId).orElseThrow(() ->
+                new IllegalArgumentException("No se ha encontrado producto con ID " + productId));
+
+        product.setName(productDTO.getName());
+        product.setPrice(productDTO.getPrice());
+        product.setDescription(productDTO.getDescription());
+
+        return mapper.toResponseDTO(productRepository.save(product));
+    }
+
 
 }
